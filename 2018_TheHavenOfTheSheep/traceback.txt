@@ -1,0 +1,44 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 2711, in script
+    "{cps=25}쾅!{/cps}"
+IOError: Couldn't find file 'sound/bang.wav'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 2711, in script
+    "{cps=25}쾅!{/cps}"
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\ast.py", line 678, in execute
+    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\exports.py", line 1204, in say
+    who(what, *args, **kwargs)
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\character.py", line 1031, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\character.py", line 823, in do_display
+    **display_args)
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\character.py", line 572, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\ui.py", line 289, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\display\core.py", line 2662, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\display\core.py", line 3334, in interact_core
+    renpy.audio.audio.periodic()
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\audio\audio.py", line 993, in periodic_thread_main
+    periodic_pass()
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\audio\audio.py", line 937, in periodic_pass
+    c.periodic()
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\audio\audio.py", line 419, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\audio\audio.py", line 71, in load
+    rv = renpy.loader.load(fn)
+  File "E:\renpy\renpy-7.1.1-sdk\renpy\loader.py", line 576, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'sound/bang.wav'.
+
+Windows-8-6.2.9200
+Ren'Py 7.1.1.929
+양의 안식처 scene1to5
+Thu Nov 29 03:18:27 2018
